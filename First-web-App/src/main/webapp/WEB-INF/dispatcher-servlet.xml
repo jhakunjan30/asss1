@@ -15,7 +15,7 @@
 	http://www.springframework.org/schema/task/spring-task-3.0.xsd
 	">
 	<context:annotation-config></context:annotation-config>
-	<context:component-scan base-package="com.nagarro.firstapp.controller" />
+	<context:component-scan base-package="com.firstapp.controller" />
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="suffix">
