@@ -7,3 +7,4 @@ node{
     sh "${MAVEN_HOME}/bin/mvn package"
   
   }
+} 
