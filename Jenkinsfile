@@ -1,5 +1,8 @@
 pipeline {
     agent any 
+    tools{
+        jdk "JAVA 1.8"
+    }
     stages {
         stage('Clean') { 
             steps {
