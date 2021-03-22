@@ -16,7 +16,7 @@ pipeline {
         stage('Package') { 
             steps {
                 //
-              bat "mvn package"
+              bat "mvn package -f First-Web-App"
             }
         }
     }
