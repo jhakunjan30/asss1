@@ -22,11 +22,16 @@ pipeline {
               bat "mvn package -f First-Web-App"
             }
         }
-        stage('Sonar Code Analysis'){
-            def scannerhome = tools 'sonar_scanner'
-            withSonarQubeEnv ('sonar_server') {
-                bat """C:/Freshers/sonarqube-8.7.1.42226/sonarqube-8.7.1.42226/bin/StartSonar"""
-            
+        stage ('Sonar Code Analysis')
+        {
+            steps
+            {  
+                echo  "\u2600 **********Sonar Analysis Stage Begins*******"
+                echo "Executing Sonar analysis"
+                withSonarQubeEnv("sonar_server")
+                {
+                    bat "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar"
+                }       
             }
         }
     }
