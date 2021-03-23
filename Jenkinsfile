@@ -30,7 +30,7 @@ pipeline {
                 echo "Executing Sonar analysis"
                 withSonarQubeEnv("sonar_server")
                 {
-                    bat "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar"
+                    bat "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:2.13:sonar"
                 }       
             }
         }
