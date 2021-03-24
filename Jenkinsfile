@@ -24,15 +24,15 @@ pipeline {
         }
         stage ('Sonar Code Analysis')
         {
-            steps
-            {  
-                echo  "\u2600 **********Sonar Analysis Stage Begins*******"
-                echo "Executing Sonar analysis"
-                withSonarQubeEnv("sonar_server")
-                {
-                    bat "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:2.13:sonar"
-                }       
-            }
+             steps{
+                 withSonarQubeEnv(credentialsId:'sonarserv' ,installationName: 'sonar_server')
+                 { 
+                     bat "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar "
+                 }
+             }
+            
+             
+         }
         }
     }
 }
