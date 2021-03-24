@@ -27,7 +27,7 @@ pipeline {
              steps{
                  withSonarQubeEnv(credentialsId:'sonarserv' ,installationName: 'sonar_server')
                  { 
-                     bat "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar  "
+                     bat "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar"
                  }
              }
             
