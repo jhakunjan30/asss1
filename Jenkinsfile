@@ -27,7 +27,7 @@ pipeline {
              steps{
                  withSonarQubeEnv(credentialsId:'jenkins_sonar' ,installationName: 'sonar_server')
             { 
-                bat "org.sonarsource.scanner.maven:sonar-maven-plugin:jar:3.7.0.1746"
+                bat "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar"
 
  
 
