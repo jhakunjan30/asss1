@@ -27,7 +27,8 @@ pipeline {
             steps{
                 withSonarQubeEnv(installationName: 'sonar-server')
                 { 
-                    mvn sonar:sonar \-Dsonar.projectKey=first-web-app \
+                    mvn sonar:sonar \
+                    -Dsonar.projectKey=first-web-app \
                     -Dsonar.host.url=http://localhost:9000 \
                     -Dsonar.login=bc07dd17f004c5e0726ca2319947253241f94a10
 
