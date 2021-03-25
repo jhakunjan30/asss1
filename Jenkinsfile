@@ -27,7 +27,7 @@ pipeline {
              steps{
                  withSonarQubeEnv('sonar_server')
                  { 
-                     withMaven(maven:'Maven3'){
+                     withMaven(maven:'Maven 3.7.0.1746'){
                         bat 'mvn clean package sonar:sonar'
                      }
                      
