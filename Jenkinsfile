@@ -27,8 +27,9 @@ pipeline {
             steps{
                 withSonarQubeEnv(installationName: 'sonar-server')
                 { 
-                    bat "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar"
-                    Dsonar.login = bc07dd17f004c5e0726ca2319947253241f94a10
+                    mvn sonar:sonar \-Dsonar.projectKey=first-web-app \
+                    -Dsonar.host.url=http://localhost:9000 \
+                    -Dsonar.login=bc07dd17f004c5e0726ca2319947253241f94a10
 
  
 
