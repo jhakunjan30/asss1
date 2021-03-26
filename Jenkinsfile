@@ -23,11 +23,7 @@ pipeline {
               bat "mvn package -f First-Web-App"
             }
         }
-         stage('Build'){
-            steps{
-                bat "mvn clean package install"
-            }
-        }
+        
         stage ('Sonar Code Analysis')
         {
             steps{
