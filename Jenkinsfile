@@ -27,9 +27,12 @@ pipeline {
         stage ('Sonar Code Analysis')
         {
             steps{
-                withSonarQubeEnv(credentialsId:'jenkins_sonar',installationName:'sonar_server')
+                withSonarQubeEnv(installationName:'sonar_server')
                 { 
-                    bat "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar "
+                    
+                    "mvn clean install"
+                    "mvn sonar:sonar -Dsonar.login=bc07dd17f004c5e0726ca2319947253241f94a10"
+                   
 
  
 
