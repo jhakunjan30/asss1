@@ -29,13 +29,14 @@ pipeline {
             steps{
                 withSonarQubeEnv(installationName:'sonar_server')
                 { 
+                    step{
+                        "mvn clean install"
+                    }
+                    step{
+                      "mvn sonar:sonar -Dsonar.login=bc07dd17f004c5e0726ca2319947253241f94a10"  
+                    }
                     
-                    "mvn clean install"
-                    "mvn sonar:sonar -Dsonar.login=bc07dd17f004c5e0726ca2319947253241f94a10"
-                   
-
- 
-
+                
                 }}
             
              
