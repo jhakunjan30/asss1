@@ -35,5 +35,25 @@ pipeline {
              
          
         }
+        stage('upload to artifactory'){
+               
+           steps{
+      rtUpload (
+                    serverId: 'artifactory_server',
+                    spec: '''{
+                        "files": [
+                            {
+                            "pattern": "./target/*.war",
+                            "target": "example-repo-local"
+                            }
+                        ]
+                    }''',
+                    failNoOp: true,
+                )
+                rtPublishBuildInfo (
+                    serverId: 'artifactory_server',
+                )
+           }
+           }
     }
 }
